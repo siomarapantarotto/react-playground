@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+## Original version with few changes before playing around:
+
+- Removed image from src and placed it inside public folder
+- Added documentation regarding the 2 ways to handle images
+- Added documentation to the two considered CSS global files 
 
 ## Available Scripts
 
