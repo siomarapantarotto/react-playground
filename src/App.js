@@ -1,27 +1,27 @@
-// Prefer to put any site-wide images used in many different places inside the public folder.
-//import logo from './logo.svg'; // File moved from src to public folder
 import './App.css';
 
 function App() {
+
+  let name = "Sophia Loren";
+
+  const handleClick = () => {
+    name = "Elvis Presley";
+    console.log(name);
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />*/} {/* 1st way to work with images */}
-        <img src='/logo.svg' className="App-logo" alt="logo" />   {/* 2nd way to work with images */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React & Firebase
-        </a>
-      </header>
+      <h1>Hello, my name is {name}</h1>
+      <button onClick={handleClick}>Change Name</button>      
     </div>
   );
 }
 
 export default App;
+
+/*
+  When you click the button, the name changes to “Elvis Presley” in the console, but not in the UI. 
+  This is because React doesn’t re-render the component when the state changes. 
+  To make the component re-render when the state changes, you need to use the useState hook. 
+  We’ll cover the useState hook in the next section.
+*/
