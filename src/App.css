@@ -1,3 +1,8 @@
+/* 
+This CSS file add some CSS to the App component.
+It's also considered as a global style file, but it is specific to the App component. 
+*/ 
+
 .App {
   text-align: center;
 }
