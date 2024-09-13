@@ -4,7 +4,6 @@ import { useState } from 'react';
 function App() {
 
   // attribute name and method setName
-  const [name, setName] = useState("Sophia Loren");
   const [events, setEvents] = useState([
     { title: "Sophia's birthday party", id: 1 },
     { title: "Elvis's music concert", id: 2 },
@@ -12,18 +11,36 @@ function App() {
     { title: "Sara's graduation", id: 4 }
   ]);
 
-  const handleClick = () => {
-    setName("Elvis Presley");
-    console.log(name);
+  // Bad practice - Direct State Usage: This version directly uses the events state to 
+  // compute the new state. If events is stale or if there are multiple state updates 
+  // happening simultaneously, this can lead to incorrect state updates.
+
+  //const handleClick = (id) => {
+  //  setEvents(events.filter((event) => {
+  //    return event.id !== id
+  //  }));
+  //  console.log('Event ID:', id);
+  //}
+
+  // Good practice - Functional State Update: This version uses a functional state update 
+  // by passing a function to setEvents method. The function receives the previous state 
+  // (prevEvents) as an argument and returns the new state. This ensures that the state 
+  // update is based on the most recent state, avoiding issues with stale state.
+  const handleClick = (id) => {
+    setEvents((prevEvents) => {
+      return prevEvents.filter((event) => {
+        return event.id !== id
+      });
+    });
+    console.log('Event ID:', id);
   }
   
   return (
     <div className="App">
-      <h1>Hello, my name is {name}</h1>
-      <button onClick={handleClick}>Change Name</button>
       {events.map((event, index) => (
         <div key={event.id}>
           <h2>{index} - {event.title}</h2>
+          <button onClick={() => {handleClick(event.id)}}>Delete Event</button>
         </div>
       ))}     
     </div>
