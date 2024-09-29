@@ -41,11 +41,14 @@ function App() {
     });
     console.log('Event ID:', id);
   }
-  
+
+  // just to show another way to pass props to a component
+  const subtitle = "All the latest events in the world";
+    
   return (
     <div className="App">
-      <Title />
-      
+      <Title title="The World Fantastic Events" subtitle={subtitle}/>
+
       {showEvents && (
         <div>
           <button onClick={() => setShowEvents(false)}>Hide Events</button>
