@@ -48,6 +48,7 @@ function App() {
   return (
     <div className="App">
       <Title title="The World Fantastic Events" subtitle={subtitle}/>
+      <Title title="Just Another Title" subtitle="Another subtitle"/>
 
       {showEvents && (
         <div>
