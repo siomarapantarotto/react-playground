@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Title from './components/Title';
 
 function App() {
@@ -48,8 +48,7 @@ function App() {
   return (
     <div className="App">
       <Title title="The World Fantastic Events" subtitle={subtitle}/>
-      <Title title="Just Another Title" subtitle="Another subtitle"/>
-
+      
       {showEvents && (
         <div>
           <button onClick={() => setShowEvents(false)}>Hide Events</button>
@@ -61,10 +60,11 @@ function App() {
         </div>
       )}
       {showEvents && events.map((event, index) => (
-        <div key={event.id}>
+        // long way to create a fragment on elements that have props inside
+        <React.Fragment key={event.id}>
           <h2>{index} - {event.title}</h2>
           <button onClick={() => {handleClick(event.id)}}>Delete Event</button>
-        </div>
+        </React.Fragment>
       ))}     
     </div>
   );

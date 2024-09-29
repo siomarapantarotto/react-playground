@@ -1,11 +1,12 @@
 export default function Title({title, subtitle}) {
 
     return (
-        <div>
+        // short way to create a fragment on elements that don't carry props inside
+        <>
             <h1 className="title">{title}</h1>
             <br />
             <h2 className="subtitle">{subtitle}</h2>
-        </div>
+        </>
     )
 }
 
