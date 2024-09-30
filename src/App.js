@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Title from './components/Title';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
     
   return (
     <div className="App">
+      
       <Title title="The World Fantastic Events" subtitle={subtitle}/>
       
       {showEvents && (
@@ -65,7 +67,23 @@ function App() {
           <h2>{index} - {event.title}</h2>
           <button onClick={() => {handleClick(event.id)}}>Delete Event</button>
         </React.Fragment>
-      ))}     
+      ))}
+
+      {/*
+      <Modal>
+        <h2>10% Off Coupon Code!!</h2>
+        <p>Use the code NINJA10 at the checkout.</p>
+      </Modal>
+      */}      
+
+      <Modal>
+        <h2>Terms and Conditions</h2>
+        <p>Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
+        Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
+        Lorem ipsum dolor sit amet consectetuer</p>
+        <a href="https://siomara.com.br">Find out more about me...</a>
+      </Modal>
+           
     </div>
   );
 }
