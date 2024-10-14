@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Title from './components/Title';
 import Modal from './components/Modal';
 
@@ -7,6 +7,7 @@ function App() {
 
   // React enforces the "Rules of Hooks" to ensure consistent behavior of hooks.
   // useState (and other hooks) must be called at the top level of the component.
+  const [showModal, setShowModal] = useState(true);   // attribute and set method
   const [showEvents, setShowEvents] = useState(true); // attribute and set method
   const [events, setEvents] = useState([              // attribute and set method
     { title: "Sophia's birthday party", id: 1 },
@@ -15,10 +16,8 @@ function App() {
     { title: "Sara's graduation", id: 4 }
   ]);  
 
-  useEffect(() => {
-    //console.log('events:', events);
-    console.log('showEvents:', showEvents);
-  });  
+  console.log('showEvents:', showEvents);
+  console.log('showModal:', showModal);
 
   // Bad practice - Direct State Usage: This version directly uses the events state to 
   // compute the new state. If events is stale (outdated) or if there are multiple state 
@@ -41,6 +40,10 @@ function App() {
       });
     });
     console.log('Event ID:', id);
+  }
+
+  const handleClose = () => {
+    setShowModal(false)
   }
 
   // just to show another way to pass props to a component
@@ -76,13 +79,12 @@ function App() {
       </Modal>
       */}      
 
-      <Modal>
+      { showModal && <Modal handleClose={handleClose}>
         <h2>Terms and Conditions</h2>
         <p>Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
         Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
-        Lorem ipsum dolor sit amet consectetuer</p>
-        <a href="https://siomara.com.br">Find out more about me...</a>
-      </Modal>
+        Lorem ipsum dolor sit amet</p>
+      </Modal>}
            
     </div>
   );
