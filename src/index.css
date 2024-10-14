@@ -1,14 +1,5 @@
-/* 
-  This CSS file sets the global styles for the application. It holds some basic 
-  Reset styles and styles for common elements or classes used in many different
-  places of the application like heading styles, buttons styles, and others.
-  It is imported in the index.js file and applied to the whole application.
-*/
+/* Global CSS file */
 
-/* 
-  The body selector removes default margin and sets a system font stack for better cross-platform consistency.
-  Font smoothing is applied for better text rendering on different operating systems.
-*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,15 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
-  The code selector sets a monospaced font stack for code elements.
-*/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Styles for Title component */
 
 .title {
   display: inline-block;
