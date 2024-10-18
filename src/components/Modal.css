@@ -14,3 +14,12 @@
     background: #fff;
     border-radius: 10px;    
 }
+
+/*
+h2 {...         -> applies to all h2 elements (global)
+.modal h2 {...  -> applies to h2 elements of Modal component only
+*/
+.modal h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
