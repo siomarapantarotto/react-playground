@@ -20,6 +20,7 @@ h2 {...         -> applies to all h2 elements (global)
 .modal h2 {...  -> applies to h2 elements of Modal component only
 */
 .modal h2 {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f08a23;
     padding-bottom: 10px;
+    text-align: center;
 }
