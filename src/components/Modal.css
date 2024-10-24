@@ -22,5 +22,4 @@ h2 {...         -> applies to all h2 elements (global)
 .modal h2 {
     border-bottom: 1px solid #f08a23;
     padding-bottom: 10px;
-    text-align: center;
 }
