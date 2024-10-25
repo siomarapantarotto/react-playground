@@ -54,7 +54,8 @@ function App() {
       )}
       {showEvents && <EventList events = {events} handleClick={handleClick}/>}    
 
-      { showModal && <Modal handleClose={handleClose}>
+      {/* Display Modal component passing a function and a dynamic inline style as parameters*/}
+      { showModal && <Modal handleClose={handleClose} isSalesModal={false}>
         <h2>Terms and Conditions</h2>
         <p>Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
         Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer
